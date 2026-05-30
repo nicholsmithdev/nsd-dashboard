@@ -88,6 +88,29 @@
 
 
 
+
+  .bbl-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:1.5rem}
+  .bbl-loan-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:1.5rem}
+  .bbl-loan-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1rem}
+  .bbl-loan-name{font-size:12px;font-weight:500;color:var(--muted);margin:0 0 4px}
+  .bbl-loan-balance{font-size:20px;font-weight:500;color:var(--text);margin:0 0 10px}
+  .bbl-progress-track{height:6px;background:var(--surface2);border-radius:3px;margin-bottom:8px;overflow:hidden}
+  .bbl-progress-fill{height:100%;border-radius:3px}
+  .bbl-loan-meta{font-size:11px;color:var(--muted);display:flex;justify-content:space-between}
+  .bbl-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;margin-bottom:8px;font-family:'DM Mono',monospace}
+  .bbl-badge-paused{background:#2a2010;color:#c8a84a}
+  .bbl-badge-active{background:#102a20;color:#5cba8a}
+  .bbl-controls{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:1.5rem}
+  .bbl-ctrl label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+  .bbl-ctrl-row{display:flex;align-items:center;gap:8px}
+  .bbl-ctrl-row input[type=range]{flex:1}
+  .bbl-ctrl-val{font-size:13px;font-weight:500;color:var(--text);min-width:80px;text-align:right;font-family:'DM Mono',monospace}
+  .bbl-freedom{background:var(--surface2);border-radius:var(--radius-lg);padding:1.2rem;margin-bottom:1.5rem;text-align:center}
+  .bbl-freedom-date{font-size:28px;font-weight:500;color:var(--text);margin:4px 0;font-family:'DM Mono',monospace}
+  .bbl-freedom-label{font-size:13px;color:var(--muted)}
+  .bbl-freedom-saving{font-size:13px;color:var(--accent2);font-weight:500;margin-top:4px}
+  .bbl-tip{background:var(--surface2);border-radius:var(--radius);padding:12px 14px;font-size:13px;color:var(--muted);line-height:1.7;margin-top:1rem}
+
   .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.5rem; }
   .content-select { width: 100%; padding: 10px 12px; background: var(--surface2); border: 0.5px solid var(--border2); border-radius: var(--radius); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; appearance: none; cursor: pointer; }
   .content-select:focus { border-color: var(--accent); }
@@ -199,6 +222,7 @@
       <button class="nav-btn" onclick="showPage('sheets',this)">Spreadsheets</button>
       <button class="nav-btn" onclick="showPage('pa',this)">PA</button>
       <button class="nav-btn" onclick="showPage('content',this)">Content</button>
+      <button class="nav-btn" onclick="showPage('bbl',this)">Loans</button>
     </nav>
     <button class="logout-btn" onclick="doLogout()">log out</button>
   </header>
@@ -826,6 +850,85 @@ When writing an email, tell Claude: who it is going to, their company, what the 
     </div>
   </div>
 
+
+  <!-- BBL LOANS PAGE -->
+  <div class="page" id="page-bbl">
+    <h1 class="page-title">Bounce back loans</h1>
+    <p class="page-sub">Track all three BBLs and model your payoff strategy. All at 2.5% fixed.</p>
+
+    <div class="bbl-metrics">
+      <div class="metric"><p class="metric-label">Total outstanding</p><p class="metric-value">£89,495</p><p class="metric-sub" style="font-size:11px;color:var(--hint);margin-top:4px">across 3 companies</p></div>
+      <div class="metric"><p class="metric-label">Monthly committed</p><p class="metric-value">£2,077</p><p class="metric-sub" style="font-size:11px;color:var(--hint);margin-top:4px">NSD + NSI paused 6 months</p></div>
+      <div class="metric"><p class="metric-label">Interest rate</p><p class="metric-value">2.5%</p><p class="metric-sub" style="font-size:11px;color:var(--hint);margin-top:4px">fixed — all three loans</p></div>
+    </div>
+
+    <p class="section-label">Current positions</p>
+    <div class="bbl-loan-cards">
+      <div class="bbl-loan-card">
+        <p class="bbl-loan-name">Nichol Smith Development</p>
+        <p class="bbl-loan-balance">£24,338</p>
+        <span class="bbl-badge bbl-badge-paused">Paused 6 months</span>
+        <div class="bbl-progress-track"><div class="bbl-progress-fill" style="width:35%;background:#1D9E75"></div></div>
+        <div class="bbl-loan-meta"><span>£655.72/mo</span><span>Clear 2nd</span></div>
+      </div>
+      <div class="bbl-loan-card">
+        <p class="bbl-loan-name">Nichol Smith Investments</p>
+        <p class="bbl-loan-balance">£30,926</p>
+        <span class="bbl-badge bbl-badge-paused">Paused 6 months</span>
+        <div class="bbl-progress-track"><div class="bbl-progress-fill" style="width:25%;background:#378ADD"></div></div>
+        <div class="bbl-loan-meta"><span>£680.52/mo</span><span>Clear last</span></div>
+      </div>
+      <div class="bbl-loan-card">
+        <p class="bbl-loan-name">mediahau5</p>
+        <p class="bbl-loan-balance">£34,231</p>
+        <span class="bbl-badge bbl-badge-active">Active — kill this first</span>
+        <div class="bbl-progress-track"><div class="bbl-progress-fill" style="width:18%;background:#D85A30"></div></div>
+        <div class="bbl-loan-meta"><span>£740.78/mo</span><span>Only active loan</span></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <p class="section-label">Model your payoff — drag to simulate</p>
+
+    <div class="bbl-controls">
+      <div class="bbl-ctrl">
+        <label>Extra monthly overpayment on top of minimums</label>
+        <div class="bbl-ctrl-row">
+          <input type="range" id="bbl-overpay" min="0" max="3000" step="50" value="0" oninput="bblRecalc()">
+          <span class="bbl-ctrl-val" id="bbl-overpay-val">£0/mo</span>
+        </div>
+      </div>
+      <div class="bbl-ctrl">
+        <label>Tinto Collective monthly rental income (15% to loans)</label>
+        <div class="bbl-ctrl-row">
+          <input type="range" id="bbl-mgmt" min="0" max="10000" step="100" value="0" oninput="bblRecalc()">
+          <span class="bbl-ctrl-val" id="bbl-mgmt-val">£0/mo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bbl-freedom">
+      <p class="bbl-freedom-label">Projected debt-free date (avalanche method)</p>
+      <p class="bbl-freedom-date" id="bbl-freedom-date">—</p>
+      <p class="bbl-freedom-saving" id="bbl-freedom-saving"></p>
+    </div>
+
+    <div style="margin-bottom:1rem">
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;font-size:12px;color:var(--muted)">
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#1D9E75"></span>NSD</span>
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#378ADD"></span>NSI</span>
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#D85A30"></span>mediahau5</span>
+      </div>
+      <div style="position:relative;width:100%;height:220px">
+        <canvas id="bblChart" role="img" aria-label="Line chart showing loan balances declining to zero over time for all three BBLs"></canvas>
+      </div>
+    </div>
+
+    <div class="bbl-tip">
+      <strong style="color:var(--text)">Strategy:</strong> mediahau5 is the only active loan and has no business purpose — overpay this hard now. When NSD and NSI resume in 6 months, snowball freed payments into NSD first (smallest balance = fastest win), then NSI last. Every £500 extra/month moves the debt-free date significantly.
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -1039,6 +1142,136 @@ When writing an email, tell Claude: who it is going to, their company, what the 
       btn.textContent = 'Copied!';
       setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
     });
+  }
+
+  var BBL_LOANS = [
+    { name:'NSD', bal:24338.36, pmt:655.72, pause:6, color:'#1D9E75' },
+    { name:'NSI', bal:30926.24, pmt:680.52, pause:6, color:'#378ADD' },
+    { name:'mediahau5', bal:34230.88, pmt:740.78, pause:0, color:'#D85A30' }
+  ];
+  var BBL_RATE = 0.025/12;
+  var bblChart = null;
+  var bblBaseMonths = null;
+
+  function bblSimLoan(bal, pmt, pauseMonths, extraPmt) {
+    var b = bal;
+    var schedule = [Math.round(b)];
+    for (var m = 1; m <= 300; m++) {
+      if (b <= 0) { schedule.push(0); continue; }
+      var interest = b * BBL_RATE;
+      if (m <= pauseMonths) {
+        b = b + interest;
+      } else {
+        b = b + interest - pmt - extraPmt;
+      }
+      if (b < 0) b = 0;
+      schedule.push(Math.round(b));
+      if (b === 0) break;
+    }
+    return schedule;
+  }
+
+  function bblCalcAvalanche(extraTotal) {
+    var order = [2, 0, 1];
+    var freed = 0;
+    var schedules = [null, null, null];
+    var maxMonths = 0;
+    for (var pass = 0; pass < order.length; pass++) {
+      var idx = order[pass];
+      var l = BBL_LOANS[idx];
+      var extra = extraTotal + freed;
+      var sched = bblSimLoan(l.bal, l.pmt, l.pause, extra);
+      schedules[idx] = sched;
+      var months = sched.length - 1;
+      while (months > 0 && sched[months] === 0) months--;
+      if (sched[months] === 0) months = sched.length - 1;
+      maxMonths = Math.max(maxMonths, sched.length - 1);
+      freed += l.pmt;
+    }
+    return { months: maxMonths, schedules: schedules };
+  }
+
+  function bblRecalc() {
+    var overpay = parseInt(document.getElementById('bbl-overpay').value) || 0;
+    var mgmt = parseInt(document.getElementById('bbl-mgmt').value) || 0;
+    var mgmtContrib = Math.round(mgmt * 0.15);
+    var totalExtra = overpay + mgmtContrib;
+
+    document.getElementById('bbl-overpay-val').textContent = '£' + overpay.toLocaleString() + '/mo';
+    document.getElementById('bbl-mgmt-val').textContent = '£' + mgmt.toLocaleString() + '/mo' + (mgmt > 0 ? ' → £' + mgmtContrib + ' to loans' : '');
+
+    var result = bblCalcAvalanche(totalExtra);
+    if (bblBaseMonths === null) bblBaseMonths = result.months;
+
+    var d = new Date();
+    d.setMonth(d.getMonth() + result.months);
+    var mNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    document.getElementById('bbl-freedom-date').textContent = mNames[d.getMonth()] + ' ' + d.getFullYear();
+
+    var saved = bblBaseMonths - result.months;
+    if (saved > 0) {
+      document.getElementById('bbl-freedom-saving').textContent = saved + ' months sooner than minimum payments only';
+    } else if (totalExtra > 0) {
+      document.getElementById('bbl-freedom-saving').textContent = 'Add more to accelerate further';
+    } else {
+      document.getElementById('bbl-freedom-saving').textContent = 'Drag the sliders above to see how fast you can clear these';
+    }
+
+    var maxM = result.months;
+    var step = maxM > 60 ? 6 : 3;
+    var labels = [];
+    for (var i = 0; i <= maxM; i += step) {
+      var ld = new Date();
+      ld.setMonth(ld.getMonth() + i);
+      labels.push(mNames[ld.getMonth()] + ' \'' + String(ld.getFullYear()).slice(2));
+    }
+
+    var datasets = BBL_LOANS.map(function(l, idx) {
+      var sched = result.schedules[idx] || [];
+      var pts = [];
+      for (var i = 0; i <= maxM; i += step) {
+        pts.push(sched[i] !== undefined ? sched[i] : 0);
+      }
+      return {
+        label: l.name,
+        data: pts,
+        borderColor: l.color,
+        backgroundColor: 'transparent',
+        borderWidth: 2,
+        pointRadius: 2,
+        tension: 0.3
+      };
+    });
+
+    if (bblChart) {
+      bblChart.data.labels = labels;
+      bblChart.data.datasets = datasets;
+      bblChart.update();
+    } else {
+      var ctx = document.getElementById('bblChart');
+      if (ctx) {
+        bblChart = new Chart(ctx, {
+          type: 'line',
+          data: { labels: labels, datasets: datasets },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              y: {
+                min: 0,
+                ticks: { callback: function(v){ return '£'+Math.round(v/1000)+'k'; }, font:{size:11}, color:'#888' },
+                grid: { color: 'rgba(128,128,128,0.1)' }
+              },
+              x: {
+                ticks: { font:{size:10}, maxRotation:45, autoSkip:true, maxTicksLimit:10, color:'#888' },
+                grid: { display:false }
+              }
+            }
+          }
+        });
+      }
+    }
   }
 
 </script>
