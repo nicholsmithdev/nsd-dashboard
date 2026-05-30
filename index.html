@@ -1174,21 +1174,40 @@ When writing an email, tell Claude: who it is going to, their company, what the 
   function bblCalcAvalanche(extraTotal) {
     var order = [2, 0, 1];
     var freed = 0;
-    var schedules = [null, null, null];
-    var maxMonths = 0;
+    var schedules = [[], [], []];
+    var monthOffsets = [0, 0, 0];
+    var cumulativeMonths = 0;
+
     for (var pass = 0; pass < order.length; pass++) {
       var idx = order[pass];
       var l = BBL_LOANS[idx];
       var extra = extraTotal + freed;
       var sched = bblSimLoan(l.bal, l.pmt, l.pause, extra);
+      var loanMonths = sched.length - 1;
+      monthOffsets[idx] = cumulativeMonths;
       schedules[idx] = sched;
-      var months = sched.length - 1;
-      while (months > 0 && sched[months] === 0) months--;
-      if (sched[months] === 0) months = sched.length - 1;
-      maxMonths = Math.max(maxMonths, sched.length - 1);
+      cumulativeMonths += loanMonths;
       freed += l.pmt;
     }
-    return { months: maxMonths, schedules: schedules };
+
+    var maxMonths = cumulativeMonths;
+
+    var fullSchedules = BBL_LOANS.map(function(l, idx) {
+      var offset = monthOffsets[idx];
+      var sched = schedules[idx];
+      var full = [];
+      for (var m = 0; m <= maxMonths; m++) {
+        if (m < offset) {
+          full.push(sched[0]);
+        } else {
+          var s = sched[m - offset];
+          full.push(s !== undefined ? s : 0);
+        }
+      }
+      return full;
+    });
+
+    return { months: maxMonths, schedules: fullSchedules };
   }
 
   function bblRecalc() {
