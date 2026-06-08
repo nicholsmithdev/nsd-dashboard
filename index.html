@@ -406,6 +406,17 @@
       <span class="check-freq">Monthly</span>
     </div>
 
+    <div class="check-card" id="cc-10">
+      <div class="check-left">
+        <button class="check-btn" onclick="toggleCheck('10')"><span class="check-icon" id="ci-10">○</span></button>
+        <div class="check-info">
+          <p class="check-name" id="cn-10">10 — Xero finance summary for Ross</p>
+          <p class="check-desc">Use Claude + Xero connector to pull the month's key figures. Prepare a short summary: cash position, overdue invoices, revenue vs last month, any concerns. Send to Ross ahead of the monthly review call.</p>
+        </div>
+      </div>
+      <span class="check-freq">Monthly</span>
+    </div>
+
     <div class="divider"></div>
     <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;">
       <p style="font-size:13px;color:var(--muted);">Tasks completed today</p>
@@ -569,6 +580,7 @@ When writing an email, tell Claude: who it is going to, their company, what the 
         <div class="sop-steps">
           <div class="sop-step"><span class="sop-step-n">7.</span><span>Every time you need to write an email, open Claude, go to the <strong>NSD Emails</strong> project, start a new chat, and tell Claude what you need. Example: "Write an email to Dylan at Travis Perkins chasing our delivery of skirting boards and architraves for Sundial. They tried to deliver on Friday but nobody was on site. Need a new delivery date." Claude will write the email in Ashley's voice ready to send.</span></div>
           <div class="sop-step"><span class="sop-step-n">8.</span><span>If Ross sends you a WhatsApp voice note asking you to send an email, listen to it, then follow the same process — open the NSD Emails project in Claude, describe what Ross has asked for, and Claude will write it.</span></div>
+          <div class="sop-step"><span class="sop-step-n">9.</span><span><strong>Connect Xero to your Claude account (one-time setup):</strong> In Claude, click your name in the bottom-left corner → Settings → Connectors → Browse Connectors → search for Xero → click Connect. You'll be redirected to Xero to authorise the connection using your existing Xero login. Once done, Claude can pull live financial data from Xero directly in any conversation. This is used for the monthly finance summary (task 10 in the checklist).</span></div>
         </div>
         <div class="sop-video"><span class="sop-video-dot"></span><span>Tutorial video: link to be added by Ross</span></div>
       </div>
@@ -599,10 +611,12 @@ When writing an email, tell Claude: who it is going to, their company, what the 
         <div class="sop-steps">
           <div class="sop-step"><span class="sop-step-n">1.</span><span>Each month PCO (the accountancy company) sends the financial dashboard to Ross and Sophie by email. When it arrives, open it using the link in the <strong>Spreadsheets</strong> tab (password in NordPass).</span></div>
           <div class="sop-step"><span class="sop-step-n">2.</span><span>Review the dashboard yourself first so you understand the figures before the call. You have an accounting background so you should be comfortable reading it — if anything is unclear, note it down as a question for the call.</span></div>
-          <div class="sop-step"><span class="sop-step-n">3.</span><span>Schedule a Zoom call with Ross and Sophie within a few days of receiving the dashboard. Message Ross on WhatsApp: <strong>"The PCO monthly dashboard has arrived. When are you and Sophie free for a quick Zoom so I can take you through it?"</strong></span></div>
-          <div class="sop-step"><span class="sop-step-n">4.</span><span><strong>On the call, cover these areas in order:</strong> Overall account health and cash position. Revenue and expenses vs last month. Profit and loss summary. Capital gains tax position — is there a liability building up? Upcoming tax payments — is enough set aside? Any areas of concern or anything that needs Ross's attention.</span></div>
-          <div class="sop-step"><span class="sop-step-n">5.</span><span>The goal of this call is that Ross and Sophie always know exactly where they stand financially. There should be <strong>zero surprises at year end.</strong> If a tax liability is building, flag it early so money can be set aside in time.</span></div>
-          <div class="sop-step"><span class="sop-step-n">6.</span><span>After the call, note down any actions that came out of it and follow up on them. If Ross needs to move money, make a payment, or speak to PCO, send him a WhatsApp reminder.</span></div>
+          <div class="sop-step"><span class="sop-step-n">3.</span><span><strong>Prepare a Xero summary using Claude.</strong> Open Claude, make sure the Xero connector is active, and ask it to pull the following for the current month: cash position across all accounts, any overdue invoices and who owes what, total revenue vs the previous month, and any unusual transactions worth flagging. Copy the output into a short written summary — this is what you'll send to Ross before the call and refer to during it.</span></div>
+          <div class="sop-step"><span class="sop-step-n">4.</span><span>Send Ross the summary on WhatsApp before scheduling the call: <strong>"Monthly finance summary ready — [paste key figures here]. When are you and Sophie free for a quick Zoom?"</strong> This means Ross already has the numbers before the call and can come with questions.</span></div>
+          <div class="sop-step"><span class="sop-step-n">5.</span><span>Schedule a Zoom call with Ross and Sophie within a few days of receiving the PCO dashboard. Message Ross on WhatsApp if not already done: <strong>"The PCO monthly dashboard has arrived. When are you and Sophie free for a quick Zoom so I can take you through it?"</strong></span></div>
+          <div class="sop-step"><span class="sop-step-n">6.</span><span><strong>On the call, cover these areas in order:</strong> Overall account health and cash position. Revenue and expenses vs last month. Profit and loss summary. Capital gains tax position — is there a liability building up? Upcoming tax payments — is enough set aside? Any areas of concern or anything that needs Ross's attention.</span></div>
+          <div class="sop-step"><span class="sop-step-n">7.</span><span>The goal of this call is that Ross and Sophie always know exactly where they stand financially. There should be <strong>zero surprises at year end.</strong> If a tax liability is building, flag it early so money can be set aside in time.</span></div>
+          <div class="sop-step"><span class="sop-step-n">8.</span><span>After the call, note down any actions that came out of it and follow up on them. If Ross needs to move money, make a payment, or speak to PCO, send him a WhatsApp reminder.</span></div>
         </div>
         <div class="sop-video"><span class="sop-video-dot"></span><span>Tutorial video: link to be added by Ross</span></div>
       </div>
