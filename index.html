@@ -314,7 +314,7 @@
         <button class="check-btn" onclick="toggleCheck('04v')"><span class="check-icon" id="ci-04v">○</span></button>
         <div class="check-info">
           <p class="check-name" id="cn-04v">04 — Site video received from Sean</p>
-          <p class="check-desc">Confirm Sean's daily site video has been uploaded to the End of Day Report folder in Google Drive by 6:45pm UK. Chase via WhatsApp if not.</p>
+          <p class="check-desc">Confirm Sean's daily site video has been posted to the <strong>Sundial Daily Report Videos</strong> WhatsApp group by end of day. No need to chase — video will be there.</p>
         </div>
       </div>
       <span class="check-freq">Daily (Mon–Thu)</span>
@@ -357,6 +357,20 @@
     </div>
 
     <div class="divider"></div>
+    <p class="section-label">One-off tasks (in progress)</p>
+
+    <div class="check-card" id="cc-ft01">
+      <div class="check-left">
+        <button class="check-btn" onclick="toggleCheck('ft01')"><span class="check-icon" id="ci-ft01">○</span></button>
+        <div class="check-info">
+          <p class="check-name" id="cn-ft01">FT01 — Sundial finishes & materials tracker</p>
+          <p class="check-desc">Build the Tinto Collective Finishes & Materials Tracker in Google Sheets. See SOP FT01 for full instructions. Dig through emails, invoices, and Asana receipts to populate the Sundial tab. Ask Ross on WhatsApp if you get stuck on anything.</p>
+        </div>
+      </div>
+      <span class="check-freq">One-off</span>
+    </div>
+
+    <div class="divider"></div>
     <p class="section-label">Fortnightly tasks</p>
 
     <div class="check-card" id="cc-04">
@@ -364,7 +378,7 @@
         <button class="check-btn" onclick="toggleCheck('04')"><span class="check-icon" id="ci-04">○</span></button>
         <div class="check-info">
           <p class="check-name" id="cn-04">04 — NST invoice + progress report</p>
-          <p class="check-desc">Download Sean's videos from the End of Day Report folder in Google Drive → generate report → create Xero invoice → draft email in Ross's inbox.</p>
+          <p class="check-desc">Play Sean's WhatsApp videos at 1.5x → dictate into Ross's ChatGPT (NordPass) → paste transcript into Report Generator → generate report → Xero invoice → draft email in Ross's inbox.</p>
         </div>
       </div>
       <span class="check-freq">Fortnightly</span>
@@ -654,6 +668,31 @@ When writing an email, tell Claude: who it is going to, their company, what the 
           <div class="sop-step"><span class="sop-step-n">4.</span><span>Once the initial build is complete, share the Google Sheet with Ross and add the link to the Spreadsheets tab in this dashboard.</span></div>
           <div class="sop-step"><span class="sop-step-n">5.</span><span><strong>Phase 2 — Ongoing maintenance (weekly):</strong> As part of daily inbox management, any time you see an email from a new supplier or contractor, add them to the correct tab immediately. If an existing contact's details change (new phone number, new person to deal with), update their record straight away.</span></div>
           <div class="sop-step"><span class="sop-step-n">6.</span><span>The goal is that at any point, Ross, Sophie, or Mae can open the directory and find the right person to call within seconds — without having to search through emails.</span></div>
+        </div>
+        <div class="sop-video"><span class="sop-video-dot"></span><span>Tutorial video: link to be added by Ross</span></div>
+      </div>
+    </div>
+
+    <div class="sop-card">
+      <div class="sop-header" onclick="toggleSop(this)">
+        <div class="sop-title-wrap"><span class="sop-num">FT01</span><span class="sop-title">Sundial finishes &amp; materials tracker</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="sop-freq">One-off</span><span class="sop-chevron">▼</span></div>
+      </div>
+      <div class="sop-body">
+        <div class="sop-steps">
+          <div class="sop-step"><span class="sop-step-n">1.</span><span>Create a new Google Sheet called <strong>Tinto Collective — Finishes &amp; Materials Tracker</strong>. Give it two tabs: <strong>Sundial</strong> and <strong>Daisy Bank</strong>. Leave Daisy Bank completely empty for now.</span></div>
+          <div class="sop-step"><span class="sop-step-n">2.</span><span>On the Sundial tab, create these column headers: <strong>Category / Item / Room(s) / Supplier / Product Name &amp; Code / Spec Detail / Unit Cost / Total Cost / Invoice Source / Notes</strong>. Bold the headers, freeze the top row, and use alternating row colours with a different fill colour per category so it's easy to scan.</span></div>
+          <div class="sop-step"><span class="sop-step-n">3.</span><span>Work through each category below. For each item, search Ross's email inbox, Asana receipts, and your own inbox for invoices and order confirmations. Log every item you find — one row per product.</span></div>
+          <div class="sop-step"><span class="sop-step-n">4.</span><span><strong>Tiles</strong> — Find all tile orders. We ordered from <strong>Quorn Stone</strong> — find the product name, which rooms they went in, cost per m² and total. Check for any other tile suppliers too.</span></div>
+          <div class="sop-step"><span class="sop-step-n">5.</span><span><strong>Paint &amp; Wallpaper</strong> — All paint is <strong>Farrow &amp; Ball</strong>, mixed by <strong>Johnson's Paint</strong>. Walls are Durable Matt finish, woodwork is a different finish — find the exact colour names and codes. Find any wallpaper orders too (supplier, pattern, room).</span></div>
+          <div class="sop-step"><span class="sop-step-n">6.</span><span><strong>Flooring</strong> — Any floor coverings that aren't tiles. Find supplier, product name, which rooms, and cost.</span></div>
+          <div class="sop-step"><span class="sop-step-n">7.</span><span><strong>Joinery &amp; Mouldings</strong> — (a) Skirting and door facings from <strong>Skirting World</strong>: OG profile, 170mil, undercoated finish — find quantity and cost. (b) Coving for upstairs bedrooms from <strong>The Range</strong> — find the product name. (c) Wall panelling from <strong>Travis Perkins</strong> — find the invoice.</span></div>
+          <div class="sop-step"><span class="sop-step-n">8.</span><span><strong>Heating</strong> — Almost everything came from <strong>Trench Radiators</strong> (radiators, valves, taps). One radiator came from <strong>Bathroom Mountain</strong>. List each item separately with cost.</span></div>
+          <div class="sop-step"><span class="sop-step-n">9.</span><span><strong>Kitchen</strong> — Came from <strong>Magnet</strong>. Find the quote or invoice — log the range name, finish, and total cost.</span></div>
+          <div class="sop-step"><span class="sop-step-n">10.</span><span><strong>Technology</strong> — Find invoices/emails for: (a) <strong>Starlink</strong> — note the package/plan. (b) <strong>Wi-Fi system</strong> — you saw this invoice recently, find the product name and supplier. (c) <strong>Ring doorbell</strong> — note it is used as an external camera above the door, not as a doorbell.</span></div>
+          <div class="sop-step"><span class="sop-step-n">11.</span><span><strong>Sanitaryware</strong> — Baths, basins, toilets, shower enclosures. Check invoices and emails for supplier and product names.</span></div>
+          <div class="sop-step"><span class="sop-step-n">12.</span><span>If you are stuck on anything — can't find an invoice, not sure which room something went in, or unsure of a product name — <strong>message Ross on WhatsApp and ask.</strong> Don't sit on it. It's much better to ask than to leave a gap or guess.</span></div>
+          <div class="sop-step"><span class="sop-step-n">13.</span><span>Once complete (or as complete as you can get it), share the Google Sheet link with Ross via WhatsApp so he can add it to the dashboard.</span></div>
         </div>
         <div class="sop-video"><span class="sop-video-dot"></span><span>Tutorial video: link to be added by Ross</span></div>
       </div>
