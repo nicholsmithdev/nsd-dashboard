@@ -151,9 +151,10 @@
   .sheet-card:hover { border-color: var(--border2); }
   .sheet-icon { color: var(--accent2); flex-shrink: 0; }
   .sheet-info { flex: 1; }
-  .sheet-name { font-size: 15px; font-weight: 500; margin-bottom: 3px; }
+  .sheet-name { font-size: 15px; font-weight: 500; margin-bottom: 3px; color: var(--text); }
   .sheet-url { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; }
   .sheet-arrow { font-size: 18px; color: var(--hint); }
+  a.sheet-link { text-decoration: none; color: inherit; display: block; }
 
   .prompt-box { background: var(--surface); border: 0.5px solid var(--border2); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.5rem; position: relative; }
   .prompt-text { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); line-height: 1.8; white-space: pre-wrap; }
@@ -804,18 +805,13 @@ When writing an email, tell Claude: who it is going to, their company, what the 
     <h1 class="page-title">Spreadsheets</h1>
     <p class="page-sub">Live Google Sheets — opens in a new tab.</p>
     <p class="section-label">Business</p>
-    <a href="https://docs.google.com/spreadsheets/d/1koKvljIyw4QQqDcsMNkh4JvweMmVMGYf/edit?pli=1&gid=1610844163#gid=1610844163" target="_blank" style="text-decoration:none;">
+    <a href="https://docs.google.com/spreadsheets/d/1koKvljIyw4QQqDcsMNkh4JvweMmVMGYf/edit?pli=1&gid=1610844163#gid=1610844163" target="_blank" style="text-decoration:none;color:inherit;display:block;">
       <div class="sheet-card"><div class="sheet-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1" fill="none"/><line x1="2" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="1"/><line x1="2" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="1"/><line x1="7" y1="7" x2="7" y2="18" stroke="currentColor" stroke-width="1"/></svg></div><div class="sheet-info"><p class="sheet-name">Job Tracker</p><p class="sheet-url">Google Sheets</p></div><div class="sheet-arrow">→</div></div>
     </a>
-    <a href="https://docs.google.com/spreadsheets/d/1m_A17iviNtAJw6Wh3qDjmjYgT7M1ArXn/edit?gid=1308097568#gid=1308097568" target="_blank" style="text-decoration:none;">
+    <a href="https://docs.google.com/spreadsheets/d/1m_A17iviNtAJw6Wh3qDjmjYgT7M1ArXn/edit?gid=1308097568#gid=1308097568" target="_blank" style="text-decoration:none;color:inherit;display:block;">
       <div class="sheet-card"><div class="sheet-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1" fill="none"/><line x1="2" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="1"/><line x1="2" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="1"/><line x1="7" y1="7" x2="7" y2="18" stroke="currentColor" stroke-width="1"/></svg></div><div class="sheet-info"><p class="sheet-name">JV Expense Tracker</p><p class="sheet-url">Google Sheets</p></div><div class="sheet-arrow">→</div></div>
     </a>
-
-    <a href="https://docs.google.com/spreadsheets/d/1tWeCuaPYRZn1hkQg1Nh9Fuk32S0nki7CN1cWkCZI8hQ/edit?gid=1751588799#gid=1751588799" target="_blank" style="text-decoration:none;">
-      <div class="sheet-card"><div class="sheet-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1" fill="none"/><line x1="2" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="1"/><line x1="2" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="1"/><line x1="7" y1="7" x2="7" y2="18" stroke="currentColor" stroke-width="1"/></svg></div><div class="sheet-info"><p class="sheet-name">NST Interiors + Materials Library</p><p class="sheet-url">Google Sheets</p></div><div class="sheet-arrow">→</div></div>
-    </a>
-
-    <a href="https://docs.google.com/spreadsheets/d/1E3NOLbGTqwJMe0T-dO1MMkI7JtLvyMwfNALsF9GyjHg/edit?usp=sharing" target="_blank" style="text-decoration:none;">
+    <a href="https://docs.google.com/spreadsheets/d/1E3NOLbGTqwJMe0T-dO1MMkI7JtLvyMwfNALsF9GyjHg/edit?usp=sharing" target="_blank" style="text-decoration:none;color:inherit;display:block;">
       <div class="sheet-card"><div class="sheet-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1" fill="none"/><line x1="2" y1="7" x2="18" y2="7" stroke="currentColor" stroke-width="1"/><line x1="2" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="1"/><line x1="7" y1="7" x2="7" y2="18" stroke="currentColor" stroke-width="1"/></svg></div><div class="sheet-info"><p class="sheet-name">Tinto Collective — Finishes &amp; Materials Tracker</p><p class="sheet-url">Google Sheets — Sundial &amp; Daisy Bank</p></div><div class="sheet-arrow">→</div></div>
     </a>
 
@@ -831,7 +827,7 @@ When writing an email, tell Claude: who it is going to, their company, what the 
     <div class="divider"></div>
     <p class="section-label">PCO — accountancy</p>
 
-    <a href="https://propertystrategycom.sharepoint.com/:x:/s/TomesHomesTeam/IQBuhNMVsE-DRJxl_hwOMIe3AT_VtVD5XqgPU18PqSJZdYQ?rtime=zBemzcq83kg" target="_blank" style="text-decoration:none;">
+    <a href="https://propertystrategycom.sharepoint.com/:x:/s/TomesHomesTeam/IQBuhNMVsE-DRJxl_hwOMIe3AT_VtVD5XqgPU18PqSJZdYQ?rtime=zBemzcq83kg" target="_blank" style="text-decoration:none;color:inherit;display:block;">
       <div class="sheet-card"><div class="sheet-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1" fill="none"/><path d="M5 10h10M5 7h10M5 13h6" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></div><div class="sheet-info"><p class="sheet-name">PCO — monthly financial dashboard</p><p class="sheet-url">SharePoint — URL and password saved in NordPass under 'PCO Financial Dashboard'</p></div><div class="sheet-arrow">→</div></div>
     </a>
   </div>
